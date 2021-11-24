@@ -5,7 +5,7 @@ import { getPosts } from "../services";
 
 export default function Home({ posts }) {
   return (
-    <main className="container mx-auto px-10 mb-8 bg-gray-50">
+    <main>
       <Head>
         <title>Bookstrap Community</title>
         <link rel="icon" href="/favicon.ico" />
@@ -20,8 +20,8 @@ export default function Home({ posts }) {
           </div>
           <div className="lg:col-span-4 col-span-1">
             <div className="lg:sticky relative top-8">
-              {/* <PostWidget />
-              <Categories /> */}
+              <PostWidget />
+              <Categories />
             </div>
           </div>
         </div>

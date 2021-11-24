@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
-const cat = [
-  { name: "React", slug: "react" },
-  { name: "Web", slug: "web" },
-  { name: "JS", slug: "JS" },
-];
+import { getCategories } from "../services";
 
 function Header() {
+  const [cat, setCats] = useState([]);
+
+  useEffect(() => {
+    getCategories().then((newCats) => {
+      setCats(newCats);
+    });
+  }, []);
+
   return (
     <main className="container mx-auto px-10 mb-8">
       <div className="border-b w-full inline-block border-blue-400 py-8">
